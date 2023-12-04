@@ -1,0 +1,39 @@
+<!-- 
+TO CHANGE THE REDIRECT LINK:
+1. Find the two places in this code where it says PUT THE REDIRECT LINK BELOW in all caps (line 12 and line 25)
+2. In each place, replace the old link with the new desired link
+ -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!--
+    PUT REDIRECT LINK BELOW, next to where it says URL=. Do not remove the text saying URL=
+  -->
+  <meta id="redirect-meta-tag" http-equiv="refresh" content="0;URL=https://www.csus.edu/administration-business-affairs/hornet-tickets/music-tickets.html">
+  <title>Redirecting to Sac State Concerts...</title>
+  <style>
+    p, a {
+      font-family:sans-serif;
+    }
+  </style>
+</head>
+<body>
+  <p>Redirecting you to the Sac State concerts events page...</p>
+  <!--
+    PUT THE REDIRECT LINK BELOW, inside the quotation marks where it says href="".
+  -->
+  <a id ="redirect-link" href="https://www.csus.edu/administration-business-affairs/hornet-tickets/music-tickets.html">Click here if you aren't redirected automatically</a>
+  
+  <script>
+    let hyperlink = document.getElementById("redirect-meta-tag").getAttribute("content").split("URL=")[1]
+    document.getElementById("redirect-link").setAttribute("href", hyperlink)
+    /* Technical note:
+    This Javascript code is here in case the correct link has only put in the <meta> tag.
+    It copies the hyperlink from <meta>
+    and puts it in the <a> href, but it will not work
+    if the user has Javascript disabled in their browser (which is rare). */
+  </script>
+</body>
+</html>
